@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: com.demo.empapp
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: Training
+          url: http://49.206.196.37:8034
+        app:
+          name: EMPAPP
+          description: emp app
+          package: $TMP
+          transport: S4HK901684
+        exclude:
+          - /test/
