@@ -1,0 +1,62 @@
+<mvc:View controllerName="com.demo.empapp.controller.View5"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f = "sap.ui.layout.form" xmlns:u="sap.ui.unified">
+    <Page id="page5" title="{i18n>title}" showNavButton="true" navButtonPress="onBack">
+        <content >
+       <HBox >
+	   <Label text="Select the file to upload" class="sapUiSmallMargin"></Label>
+				<u:FileUploader id="fileUploader" uploadOnChange="true" 
+				buttonText="Browse" icon="sap-icon://upload" change="onSelectFile"></u:FileUploader>
+	   </HBox>
+	   <Table items="{batchModel>/aEmployees}">
+				<columns>
+					<Column >
+						<Text text="Employee Id"></Text>
+					</Column>
+					<Column >
+						<Text text="Name"></Text>
+					</Column>
+					<Column >
+						<Text text="Desgination"></Text>
+					</Column>
+					<Column >
+						<Text text="Skill"></Text>
+					</Column>
+					<Column >
+						<Text text="Email ID"></Text>
+					</Column>
+					<Column >
+						<Text text="Phone.No"></Text>
+					</Column>
+					<Column >
+						<Text text="Date Of Joining"></Text>
+					</Column>
+					<Column>
+						<Text text="Salary"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem >
+						<cells>
+							<Input value="{batchModel>Empid}"></Input>
+							<Input value="{batchModel>Name}"></Input>
+							<Input value="{batchModel>Desig}"></Input>
+							<Input value="{batchModel>Skill}"></Input>
+							<Input value="{batchModel>Email}"></Input>
+							<Input value="{batchModel>Phone}"></Input>
+							<DatePicker dateValue="{path:'batchModel>Doj'}"></DatePicker>
+							<Input value="{path:'batchModel>Salary'}"></Input>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+     </content>
+     <footer>
+			<Bar>
+				<contentRight>
+					<Button text="Submit Batch" type="Accept" press="onPressSubmitBatch"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+    </Page>
+</mvc:View>

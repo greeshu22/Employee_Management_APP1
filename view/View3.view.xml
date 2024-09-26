@@ -1,0 +1,41 @@
+<mvc:View controllerName="com.demo.empapp.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f = "sap.ui.layout.form">
+    <Page id="page3" title="{i18n>title}" showNavButton="true" navButtonPress="onBack">
+        <content >
+        <f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="4" 
+        emptySpanL="4" editable="true" title="Edit Employee details">
+        <f:content>
+        	<Label text="Employee ID" required="true"></Label>
+					<Input id="idEmpId" value="{Empid}"></Input>
+					<Label text="Name" required="true"></Label>
+					<Input id="idName" value="{Name}"></Input>
+					<Label text="Designation" required="true"></Label>
+					<Input id="idDesig" value="{Desig}"></Input>
+					<Label text="Skill" required="true"></Label>
+					<Input id="idSkill" value="{Skill}"></Input>
+					<Label text="Email" required="true"></Label>
+					<Input id="idEmail" value="{Email}"></Input>
+					<Label text="Phone No." required="true"></Label>
+					<Input id="idPhone" value="{Phone}"></Input>
+					<Label text="Salary" required="true"></Label>
+					<Input id="idSalary" value="{Salary}"></Input>
+                    	<Label text="Status" required="true"></Label>
+					<Input id="idStatus" value="{Status}"></Input>
+					<Label text="Date Of Joining" required="true"></Label>
+					<DatePicker id="idDoj" dateValue="{Doj}"></DatePicker>
+        </f:content>
+        </f:SimpleForm>
+        
+     </content>
+     <footer>
+     <Bar >
+     <contentRight>
+     <Button text="Update" icon="sap-icon://save" press="onPressUpdate" type="Emphasized"></Button>
+     <Button text="Cancel" icon="sap-icon://cancel" press="onPressCancel" type="Emphasized"></Button>
+     </contentRight>
+     </Bar>
+     </footer>
+
+    </Page>
+</mvc:View>

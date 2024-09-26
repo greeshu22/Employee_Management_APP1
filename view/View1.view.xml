@@ -1,0 +1,72 @@
+<mvc:View controllerName="com.demo.empapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+        <Table items= "{/EmployeeSet}" mode="SingleSelectLeft" id="idTable">
+     <headerToolbar>
+     <Toolbar >
+     <Title text="Employee Details"></Title>
+     <ToolbarSpacer ></ToolbarSpacer>
+      <Button text="Upload Excel" icon="sap-icon://excel-attachment" press="onPressUploadExcel" type="Emphasized" class="sapUiTinyMarginEnd"></Button>
+     <Button text="Create" icon="sap-icon://create-form" press="onPressCreate" type="Emphasized" class="sapUiTinyMarginEnd"></Button>
+     <Button text="Edit" icon="sap-icon://edit" press="onPressEdit" type="Emphasized" class="sapUiTinyMarginEnd"></Button>
+     <Button text="Delete" icon="sap-icon://delete" press="onPressDelete" type="Emphasized" class="sapUiTinyMarginEnd" ></Button>
+     <Button icon="sap-icon://excel-attachment" type="Emphasized" press="onExportToXL" text="Excel"></Button>
+     </Toolbar>
+     
+     </headerToolbar>
+     <columns>
+     <Column >
+     <Text text="Employee ID"></Text>
+     </Column>
+     <Column >
+     <Text text="Name"></Text>
+     </Column>
+        <Column >
+     <Text text="Designation"></Text>
+     </Column>
+        <Column >
+     <Text text="Skill"></Text>
+     </Column>
+        <Column >
+     <Text text="Email ID"></Text>
+     </Column>
+        <Column >
+     <Text text="Phone"></Text>
+     </Column>
+        <Column >
+     <Text text="Salary"></Text>
+     </Column>
+        <Column >
+     <Text text="Status"></Text>
+     </Column>
+        <Column >
+     <Text text="DOJ"></Text>
+     </Column>
+     
+     </columns>
+
+     <items>
+     <ColumnListItem type="Active" press="onPressParticularRow">
+     
+     <cells>
+     <Text text="{Empid}"></Text>
+     <Text text="{Name}"></Text>
+     <Text text="{Desig}"></Text>
+     <Text text="{Skill}"></Text>
+     <Text text="{Emailid}"></Text>
+     <Text text="{Phone}"></Text>
+     <Text text="{path:'Salary',formatter:'.f.formatCurrency'}"></Text>
+     
+     <ObjectStatus text="{Status}" state="{path:'Status',formatter:'.f.colorStatus'}" ></ObjectStatus>
+     
+     <Text text="{path:'Doj',formatter:'.f.formatDate'}"></Text>
+     </cells>
+     </ColumnListItem>
+     </items>
+     </Table>
+     </content>
+
+    </Page>
+</mvc:View>

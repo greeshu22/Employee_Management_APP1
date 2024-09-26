@@ -1,0 +1,86 @@
+<mvc:View controllerName="com.demo.empapp.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f = "sap.ui.layout.form">
+    <Page id="page1" title="{i18n>title}" showNavButton="true" navButtonPress="onBack">
+        <content >
+        <ObjectHeader imageShape="Circle" iconActive="true" iconPress="onPressImageToDownload" icon="/sap/opu/odata/sap/ZB71_EMP_SRV/PhotoSet('{Empid}')/$value" title="{Name}" number="{Salary}" numberUnit="{Currcode}"  backgroundDesign="Solid">
+        <attributes>
+        <ObjectAttribute id="idObjEmpid" title="Emp Id" text="{Empid}"></ObjectAttribute>
+        <ObjectAttribute title="Designation" text="{Desig}"></ObjectAttribute>
+        </attributes>
+        <statuses>
+        <ObjectStatus text="{Status}"></ObjectStatus>
+        </statuses>    
+        </ObjectHeader>
+        <IconTabBar >
+        <items>
+        <IconTabFilter icon="sap-icon://hint" >
+         <f:SimpleForm title= "Employee details" layout="ResponsiveGridLayout" editable="false" labelSpanL="4" emptySpanL="4" >
+        <f:content>
+       <Label text="Employee Id"></Label>
+								<Text id="idTxtEmpid" text="{Empid}"></Text>
+								<Label text="Name"></Label>
+								<Text text="{Name}"></Text>
+								<Label text="Designation"></Label>
+								<Text text="{Desig}"></Text>
+								<Label text="Skill"></Label>
+								<Text text="{Skill}"></Text>
+								<Label text="Email"></Label>
+								<Text text="{Emailid}"></Text>
+								<Label text="Salary"></Label>
+								<Text text="{Salary}"></Text>
+                        <Label text="Status"></Label>
+								<Text text="{Status}"></Text>
+                        <Label text="Rating"></Label>
+								<Text text="{Rating}"></Text>
+
+								<Label text="Date of Joining"></Label>
+								<Text text="{Doj}"></Text>
+        </f:content>
+        </f:SimpleForm>
+        </IconTabFilter>
+        <IconTabFilter icon="sap-icon://idea-wall">
+        <Table items="{toProjects}">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="Project Details"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Employee ID"></Text>
+								</Column>
+								<Column>
+									<Text text="Prject Code"></Text>
+								</Column>
+								<Column>
+									<Text text="Prject Name"></Text>
+								</Column>
+								<Column>
+									<Text text="Client"></Text>
+								</Column>
+								<Column>
+									<Text text="Prject Description"></Text>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{Empid}"></Text>
+										<Text text="{Prjcode}"></Text>
+										<Text text="{Prjname}"></Text>
+										<Text text="{Clientname}"></Text>
+										<Text text="{Prjdesc}"></Text>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+        </IconTabFilter>
+        </items>
+        
+        </IconTabBar>
+       
+     </content>
+
+    </Page>
+</mvc:View>

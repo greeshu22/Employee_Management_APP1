@@ -1,0 +1,100 @@
+<mvc:View controllerName="com.demo.empapp.controller.View4"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f = "sap.ui.layout.form" xmlns:u = "sap.ui.unified" xmlns:upload="sap.m.upload">
+    <Page id="page4" title="{i18n>title}" showNavButton="true" navButtonPress="onBack">
+        <content >
+        <f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="4" 
+        emptySpanL="5" editable="true" title="Create Employee details">
+        <f:content>
+        	<Label text="Employee ID" ></Label>
+					<Input id="idEmpid1"></Input>
+					<Label text="Name" ></Label>
+				<Input  id="idName1"></Input>
+					<Label text="Designation" ></Label>
+					<Input id="idDesig1"></Input>
+					<Label text="Skill" ></Label>
+					<Input id="idSkill1"></Input>
+					<Label text="Email"></Label>
+					<Input id="idEmail1"></Input>
+					<Label text="Phone No."></Label>
+				<Input id="idPhone1"></Input>
+					<Label text="Salary" ></Label>
+					<Input id="idSalary1"></Input>
+                    	<Label text="Currencycode" ></Label>
+					<Input id="idccode1"></Input>
+                    <Label text="Status" ></Label>
+					<Input id="idStatus1"></Input>
+                    <!-- <Label text="Rating" ></Label>
+					<Input id="idRating1"></Input> -->
+					<Label text="Date Of Joining" ></Label>
+					<DatePicker id="idDoj1" ></DatePicker>
+        </f:content>
+        </f:SimpleForm>
+		<f:SimpleForm editable="true" title="Upload Profile Pic">
+		<f:content>
+			<Label text="Add Image"></Label>
+			<u:FileUploader id="idFileuploader" 
+				uploadUrl="/sap/opu/odata/sap/ZB71_EMP_SRV/PhotoSet"
+				sendXHR="true"
+				useMultipart="false"
+				change="onFileSelect"
+				uploadComplete="onUploadComplete"
+			></u:FileUploader>
+			<Label ></Label>
+			<Button text="Upload" type="Emphasized" width="20%" press="onPressUploadImage" icon="sap-icon://upload"> </Button>
+		</f:content>
+		</f:SimpleForm>
+	
+        <Table items="{prjModel>/aProjects}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Add Projects"></Title>
+						<ToolbarSpacer></ToolbarSpacer>
+						<Button icon="sap-icon://add" type="Emphasized" press="onAddProjects"></Button>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Employee ID"></Text>
+					</Column>
+					<Column>
+						<Text text="Project Code"></Text>
+					</Column>
+					<Column>
+						<Text text="Project name"></Text>
+					</Column>
+					<Column>
+						<Text text="Client"></Text>
+					</Column>
+					<Column>
+						<Text text="Project Description"></Text>
+					</Column>
+					<Column>
+						<Text text="Delete"></Text>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Input id= "idEmpPrj" value="{prjModel>Empid}"></Input>
+							<Input id="idPrjcode" value="{prjModel>Prjcode}"></Input>
+							<Input  id="idPrjname" value="{prjModel>Prjname}"></Input>
+							<Input id="idPrjclient" value="{prjModel>Clientname}"></Input>
+							<Input id="idPrjdesc" value="{prjModel>Prjdesc}"></Input>
+							<Button icon="sap-icon://delete" type="Reject" press="onPressDeleteProjectRow"></Button>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+     </content>
+     <footer>
+     <Bar >
+     <contentRight>
+     <Button text="Create" icon="sap-icon://save" press="onPressCreate" type="Emphasized"></Button>
+     <Button text="Cancel" icon="sap-icon://cancel" press="onPressCancel" type="Emphasized"></Button>
+     </contentRight>
+     </Bar>
+     </footer>
+
+    </Page>
+</mvc:View>
