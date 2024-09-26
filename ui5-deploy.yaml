@@ -17,9 +17,9 @@ builder:
           destination: Training
           url: http://49.206.196.37:8034
         app:
-          name: EMPAPP
+          name: ZEMPAPP
           description: emp app
           package: $TMP
-          transport: S4HK901684
+          transport: S4HK901690
         exclude:
           - /test/
